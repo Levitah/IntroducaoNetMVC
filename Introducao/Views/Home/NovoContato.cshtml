@@ -1,0 +1,37 @@
+﻿@model Introducao.Models.Pessoa
+@{
+    ViewBag.Title = "NovoContato";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Novo Contato</h2>
+
+<form action="Lista" method="POST">
+    <fieldset>
+        <legend>Informações de Pessoas</legend>
+
+        <div>
+            <label for="Id">Id</label>
+        </div>
+        <div>
+            <input type="number" value="@Model.Id" name="Id" />
+        </div>
+
+        <div>
+            <label for="Nome">Nome</label>
+        </div>
+        <div>
+            <input type="text" value="@Model.Nome" name="Nome" />
+        </div>
+
+        <div>
+            <label for="Tipo">Tipo</label>
+        </div>
+        <div>
+            <input type="number" value="@Model.Tipo" name="Tipo" />
+        </div>
+
+        <input type="submit" value="Salvar" />
+
+    </fieldset>
+</form>

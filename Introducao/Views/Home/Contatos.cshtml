@@ -1,0 +1,23 @@
+﻿@model Introducao.Models.Pessoa
+
+
+@{
+    ViewBag.Title = "Contatos";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Contatos</h2>
+
+<p> @ViewData["Id"] </p>
+<p> @ViewData["Nome"] </p>
+<p> @ViewData["Tipo"] </p>
+
+<br />
+<p> @ViewBag.Id </p>
+<p> @ViewBag.Nome </p>
+<p> @ViewBag.Tipo </p>
+
+<br />
+<p> @Model.Id </p>
+<p> @Model.Nome </p>
+<p> @Model.Tipo </p>
