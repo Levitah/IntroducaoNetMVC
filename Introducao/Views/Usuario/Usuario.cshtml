@@ -1,0 +1,76 @@
+﻿@model Introducao.Models.Usuario
+
+@{
+    ViewBag.Title = "Usuario";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Validação de Usuários</h2>
+
+@using (Html.BeginForm("Usuario", "Usuario"))
+{
+    @Html.ValidationSummary(true)
+<fieldset>
+    <legend>Dados do Usuário</legend>
+
+    <div class="editor-label">
+        @Html.LabelFor(x => x.Nome)
+    </div>
+    <div class="editor-field">
+        @Html.EditorFor(x => x.Nome)
+        @Html.ValidationMessageFor(x => x.Nome)
+    </div>
+
+    <div class="editor-label">
+        @Html.LabelFor(x => x.Idade)
+    </div>
+    <div class="editor-field">
+        @Html.EditorFor(x => x.Idade)
+        @Html.ValidationMessageFor(x => x.Idade)
+    </div>
+
+    <div class="editor-label">
+        @Html.LabelFor(x => x.Email)
+    </div>
+    <div class="editor-field">
+        @Html.EditorFor(x => x.Email)
+        @Html.ValidationMessageFor(x => x.Email)
+    </div>
+
+    <div class="editor-label">
+        @Html.LabelFor(x => x.Login)
+    </div>
+    <div class="editor-field">
+        @Html.EditorFor(x => x.Login)
+        @Html.ValidationMessageFor(x => x.Login)
+    </div>
+
+    <div class="editor-label">
+        @Html.LabelFor(x => x.Senha)
+    </div>
+    <div class="editor-field">
+        @Html.PasswordFor(x => x.Senha)
+        @Html.ValidationMessageFor(x => x.Senha)
+    </div>
+
+    <div class="editor-label">
+        @Html.LabelFor(x => x.ConfirmarSenha)
+    </div>
+    <div class="editor-field">
+        @Html.PasswordFor(x => x.ConfirmarSenha)
+        @Html.ValidationMessageFor(x => x.ConfirmarSenha)
+    </div>
+
+    <div class="editor-label">
+        @Html.LabelFor(x => x.Observacoes)
+    </div>
+    <div class="editor-field">
+        @Html.TextAreaFor(x => x.Observacoes)
+        @Html.ValidationMessageFor(x => x.Observacoes)
+    </div>
+
+    <input type="submit" value="Cadastrar" />
+
+    @section Scripts{@Scripts.Render("~/bundles/jqueryval");}
+</fieldset>
+}

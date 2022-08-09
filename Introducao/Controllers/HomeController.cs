@@ -9,9 +9,21 @@ namespace Introducao.Controllers
 {
     public class HomeController : Controller
     {
+        private readonly IEnumerable<Noticia> todasNoticias;
+
+        public HomeController()
+        {
+            todasNoticias = new Noticia().TodasAsNoticias().OrderByDescending(x => x.Data);
+        }
+
         public ActionResult Index()
         {
-            return View();
+            var ultimasNoticias = todasNoticias.Take(3);
+            var categorias = todasNoticias.Select(x => x.Categoria).Distinct().ToList();
+
+            ViewBag.Categorias = categorias;
+
+            return View(ultimasNoticias);
         }
 
         public ActionResult About()

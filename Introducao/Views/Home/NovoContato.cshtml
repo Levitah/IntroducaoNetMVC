@@ -6,32 +6,33 @@
 
 <h2>Novo Contato</h2>
 
-<form action="Lista" method="POST">
+@using (Html.BeginForm("Lista", "Home", FormMethod.Post))
+{
     <fieldset>
         <legend>Informações de Pessoas</legend>
 
         <div>
-            <label for="Id">Id</label>
+            <label for="Id">@Html.LabelFor(x => x.Id)</label>
         </div>
         <div>
-            <input type="number" value="@Model.Id" name="Id" />
-        </div>
-
-        <div>
-            <label for="Nome">Nome</label>
-        </div>
-        <div>
-            <input type="text" value="@Model.Nome" name="Nome" />
+            @Html.EditorFor(x => x.Id)
         </div>
 
         <div>
-            <label for="Tipo">Tipo</label>
+            <label for="Nome">@Html.LabelFor(x => x.Nome)</label>
         </div>
         <div>
-            <input type="number" value="@Model.Tipo" name="Tipo" />
+            @Html.EditorFor(x => x.Nome)
+        </div>
+
+        <div>
+            <label for="Tipo">@Html.LabelFor(x => x.Tipo) </label>
+        </div>
+        <div>
+            @Html.EditorFor(x => x.Tipo)
         </div>
 
         <input type="submit" value="Salvar" />
 
     </fieldset>
-</form>
+}

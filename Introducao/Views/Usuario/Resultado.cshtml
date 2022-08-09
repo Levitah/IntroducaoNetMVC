@@ -1,0 +1,63 @@
+﻿@model Introducao.Models.Usuario
+@{
+    ViewBag.Title = "Resultado";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Resultado</h2>
+<fieldset>
+    <legend>Dados do Usuário</legend>
+
+    <div class="editor-label">
+        @Html.DisplayNameFor(x => x.Nome)
+    </div>
+    <div class="editor-field">
+        @Html.DisplayFor(x => x.Nome)
+    </div>
+
+    <div class="editor-label">
+        @Html.DisplayNameFor(x => x.Idade)
+    </div>
+    <div class="editor-field">
+        @Html.DisplayFor(x => x.Idade)
+    </div>
+
+    <div class="editor-label">
+        @Html.DisplayNameFor(x => x.Email)
+    </div>
+    <div class="editor-field">
+        @Html.DisplayFor(x => x.Email)
+    </div>
+
+    <div class="editor-label">
+        @Html.DisplayNameFor(x => x.Login)
+    </div>
+    <div class="editor-field">
+        @Html.DisplayFor(x => x.Login)
+    </div>
+
+    <div class="editor-label">
+        @Html.DisplayNameFor(x => x.Senha)
+    </div>
+    <div class="editor-field">
+        @Html.DisplayFor(x => x.Senha)
+    </div>
+
+    <div class="editor-label">
+        @Html.DisplayNameFor(x => x.ConfirmarSenha)
+    </div>
+    <div class="editor-field">
+        @Html.DisplayFor(x => x.ConfirmarSenha)
+    </div>
+
+    <div class="editor-label">
+        @Html.DisplayNameFor(x => x.Observacoes)
+    </div>
+    <div class="editor-field">
+        @Html.DisplayFor(x => x.Observacoes)
+    </div>
+
+    <p>@Html.ActionLink("Voltar", "Index", "Usuario")</p>
+
+    @section Scripts{@Scripts.Render("~/bundles/jqueryval");}
+</fieldset>
