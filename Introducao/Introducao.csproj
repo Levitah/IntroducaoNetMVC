@@ -120,6 +120,10 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
+    <Compile Include="Areas\Admin\Controllers\HomeController.cs" />
+    <Compile Include="Areas\Professor\Controllers\HomeController.cs" />
+    <Compile Include="Areas\Professor\ProfessorAreaRegistration.cs" />
     <Compile Include="Controllers\AreaController.cs" />
     <Compile Include="Controllers\BundleController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -145,6 +149,10 @@
     <Content Include="Content\Site.css" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Areas\Admin\Views\web.config" />
+    <Content Include="Areas\Admin\Views\Home\Index.cshtml" />
+    <Content Include="Areas\Professor\Views\web.config" />
+    <Content Include="Areas\Professor\Views\Home\Index.cshtml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\comum\debug\setup.debug.js" />
     <Content Include="Scripts\comum\display.js" />
@@ -193,6 +201,12 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Areas\Admin\Data\" />
+    <Folder Include="Areas\Admin\Views\Shared\" />
+    <Folder Include="Areas\Professor\Data\" />
+    <Folder Include="Areas\Professor\Views\Index\" />
+    <Folder Include="Areas\Professor\Views\Shared\" />
+    <Folder Include="Views\Professor\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

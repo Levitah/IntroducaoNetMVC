@@ -34,7 +34,8 @@ namespace Introducao
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
-                defaults: new { controller = "Area", action = "Index", id = UrlParameter.Optional }
+                defaults: new { controller = "Area", action = "Index", id = UrlParameter.Optional },
+                namespaces: new[] { "Area.Controllers" }
             );
         }
     }
