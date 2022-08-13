@@ -11,7 +11,7 @@
         @foreach(string item in ViewBag.Categorias)
         {
         <li>
-            @Html.ActionLink(item, "MostrarCategoria", "Noticia", new { @categoria = item });
+            @Html.ActionLink(item, "MostrarCategoria", "Noticia", new { @categoria = item }, null);
         </li>
         }
     </ul>

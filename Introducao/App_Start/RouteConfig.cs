@@ -14,9 +14,27 @@ namespace Introducao
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
             routes.MapRoute(
+                name: "Todas as Notícias",
+                url: "news/" ,
+                defaults: new { controller = "Noticia", action = "MostrarTodas" }
+            );
+
+            routes.MapRoute(
+                name: "Categoria Específica",
+                url: "news/{categoria}",
+                defaults: new { controller = "Noticia", action = "MostrarCategoria" }
+            );
+
+            routes.MapRoute(
+                name: "Motrar Notícia",
+                url: "news/{categoria}/{titulo}-{id}",
+                defaults: new { controller = "Noticia", action = "MostrarNoticia" }
+            );
+
+            routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
-                defaults: new { controller = "Noticia", action = "Index", id = UrlParameter.Optional }
+                defaults: new { controller = "Area", action = "Index", id = UrlParameter.Optional }
             );
         }
     }
