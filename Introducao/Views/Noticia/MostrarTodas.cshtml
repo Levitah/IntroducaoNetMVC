@@ -1,0 +1,37 @@
+﻿@model IEnumerable<Introducao.Models.Noticia>
+@{
+    ViewBag.Title = "MostrarTodas";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Mostrar Todas as Notícias</h2>
+
+<div>
+    <ul>
+        @foreach (string item in ViewBag.Categorias)
+        {
+            <li>
+                @Html.ActionLink(item, "MostrarCategoria", "Noticia", new { @categoria = item }, null);
+            </li>
+        }
+    </ul>
+</div>
+
+<div>
+    <ul>
+        @foreach (var item in Model)
+        {
+            <li>
+                @Html.ActionLink(item.Titulo, "MostrarNoticia", "Noticia", new
+                {
+                    @id = item.Id,
+                    @categoria = item.Categoria.ToLower(),
+                    @titulo = item.Titulo.ToLower()
+                }, null)
+
+                <em>@Html.DisplayFor(modelItem => item.Categoria)</em>
+                <b>@Html.DisplayFor(modelItem => item.Data)</b>
+            </li>
+        }
+    </ul>
+</div>

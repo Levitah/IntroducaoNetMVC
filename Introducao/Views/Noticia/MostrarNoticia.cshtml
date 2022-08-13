@@ -1,0 +1,13 @@
+﻿@model Introducao.Models.Noticia
+@{
+    ViewBag.Title = "Mostrar Noticia";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>MostrarNoticia</h2>
+
+<h2>@Model.Titulo</h2>
+
+<em>@Model.Data - @Html.ActionLink(Model.Categoria, "Mostrar Categoria", "Noticia", new { @categoria = Model.Categoria }, null)</em>
+
+<div>@Model.Conteudo</div>

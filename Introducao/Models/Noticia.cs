@@ -77,5 +77,20 @@ namespace Introducao.Models
                 };
             return retorno;
         }
+
+        public Noticia BuscarPorId(int id)
+        {
+            return TodasAsNoticias().FirstOrDefault(x => x.Id.Equals(id));
+        }
+
+        public IEnumerable<Noticia> BuscarPorCategoria(string categoria)
+        {
+            return TodasAsNoticias().Where(x => x.Categoria.ToLower().Equals(categoria.ToLower()));
+        }
+
+        public Noticia BuscarPorIdTituloECategoria(int id, string titulo, string categoria)
+        {
+            return TodasAsNoticias().FirstOrDefault(x => x.Id.Equals(id) && x.Titulo.Equals(titulo) && x.Categoria.Equals(categoria));
+        }
     }
 }
